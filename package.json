@@ -1,0 +1,22 @@
+{
+  "name": "ejercicio-entrevista",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ejercicio.js",
+  "scripts": {
+    "dev": "nodemon ejercicio.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.5",
+    "node-telegram-bot-api": "^0.60.0",
+    "telegraf": "^4.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
