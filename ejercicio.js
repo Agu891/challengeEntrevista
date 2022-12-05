@@ -1,14 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const server = express();
 const { Team } = require("./models");
 const { Telegraf } = require("telegraf");
+require("dotenv").config();
+const server = express();
 
-const bot = new Telegraf("5658227182:AAFLuED7dN7SJUZJil2jKeZj90OX6ADo9JE");
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
-mongoose.connect(
-  "mongodb+srv://admin:edmoEC0j4Cm7bOWV@cluster0.39tgnfu.mongodb.net/test"
-);
+mongoose.connect(process.env.DB_URL);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
@@ -33,5 +32,5 @@ server.get("/findById/:id", async (req, res) => {
 });
 
 server.listen(3333, () => {
-  console.log(`Servidor en http://localhost:3333`);
+  console.log(`Servidor corriendo en http://localhost:3333`);
 });
