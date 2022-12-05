@@ -25,7 +25,6 @@ server.get("/findAll", async (req, res) => {
 
 server.get("/findById/:id", async (req, res) => {
   const findById = await Team.findById(req.params.id);
-
   await bot.telegram.sendMessage("@ejerciciochanell", `${findById.name}`);
   bot.launch();
   return res.status(200).json(findById);
